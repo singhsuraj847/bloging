@@ -1,0 +1,130 @@
+.recent-post-wrapper{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
+    grid-gap: 30px;
+    padding: 5rem 0;
+
+    .mesonry-post{
+        border-radius: 5px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        min-height: 200px;
+        transition: all 1s;
+        margin-bottom: 20px;
+
+        &::after{
+            content: '';
+            position: absolute;
+            background: #000;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+            transition: all 1s;
+        }
+
+        &:nth-child(2){
+            grid-area: 1/2/3/3;
+            
+            .image-text{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-20%);
+            }
+            
+        }
+
+        .image-text {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            display: none;
+            opacity: 0;
+            transition: all 1s;
+            margin: auto;
+            p {
+                color: #fff;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                svg{
+                    margin: 0 auto;
+                    margin-right: 10px;
+                }
+            }
+            .post-btn{
+                position: absolute;
+                border: 1px solid #fff;
+                padding: 8px 14px;
+                border-radius: 10px;
+                margin-top: 20px;
+                transition: all 1s;
+
+                &:hover{
+                    background: #fff;
+                    color: #22447b;
+                }
+            }
+        }
+
+        .image-title {
+            font-size: 20px;
+            color: #fff;
+            z-index: 10;
+            position: absolute;
+            padding: 10px;
+            padding-bottom: 20px;
+            // top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            opacity: 1;
+            transition: all 1s;
+            // display: none;  
+        }
+
+        &:hover{
+            &::after{
+                opacity: 0.9;
+            }
+            .image-text{
+                opacity: 1;
+                display: block;
+            }
+            .image-title{
+                display: none;
+                opacity: 0;
+            }
+        }
+        
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .recent-post-wrapper{
+        display: flex;
+        flex-direction: column;
+    .mesonry-post{
+        width: 100%;
+        margin: 0 auto;
+        height: 300px;
+    }
+}
+    
+}
