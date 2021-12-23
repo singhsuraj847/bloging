@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { getPosts, getPostDetails, Loader } from "../../services";
+import { getPosts, getPostDetails } from "../../services";
 import {
   PostDetail,
   Categories,
@@ -8,6 +8,7 @@ import {
   Author,
   Comments,
   CommentsForm,
+  Loader,
 } from "../../components";
 
 const PostDetails = ({ post }) => {
